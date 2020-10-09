@@ -22,6 +22,7 @@ const Input = styled.input`
   padding: ${props => (props.hasButton ? '16px 52px 16px 10px' : '16px 10px')};
   width: 100%;
   -webkit-appearance: none;
+  height: fit-content;
 
   &:disabled {
     background: #fff;
