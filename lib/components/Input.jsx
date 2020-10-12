@@ -19,10 +19,9 @@ const Input = styled.input`
   font-size: 16px;
   opacity: ${props => (props.disabled && !props.invalid ? '.5' : '1')};
   outline: none;
-  padding: ${props => (props.hasButton ? '16px 52px 16px 10px' : '16px 10px')};
   width: 100%;
   -webkit-appearance: none;
-  height: fit-content;
+  padding-left: 10px;
 
   &:disabled {
     background: #fff;
