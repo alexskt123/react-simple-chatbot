@@ -22,7 +22,7 @@ const Bubble = styled.div`
   color: ${props => (props.user ? props.theme.userFontColor : props.theme.botFontColor)};
   display: inline-block;
   font-size: 14px;
-  max-width: 50%;
+  max-width: 70%;
   margin: ${props => {
     const { isFirst, showAvatar, user } = props;
 

@@ -3,10 +3,8 @@ import styled from 'styled-components';
 const FloatButton = styled.a`
   align-items: center;
   cursor: pointer;
-  background: ${({ theme }) => theme.headerBgColor};
   bottom: 32px;
   border-radius: 100%;
-  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   fill: ${({ theme }) => theme.headerFontColor};
   height: 56px;

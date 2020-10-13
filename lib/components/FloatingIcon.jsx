@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FloatingIcon = styled.img`
-  height: 24px;
-  width: 24px;
+  height: 100px;
+  width: 100px;
 `;
 
 export default FloatingIcon;
