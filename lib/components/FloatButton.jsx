@@ -7,13 +7,13 @@ const FloatButton = styled.a`
   border-radius: 100%;
   display: flex;
   fill: ${({ theme }) => theme.headerFontColor};
-  height: 56px;
+  height: 100px;
   justify-content: center;
   position: fixed;
   right: 32px;
   transform: ${props => (props.opened ? 'scale(0)' : 'scale(1)')};
   transition: transform 0.3s ease;
-  width: 56px;
+  width: 100px;
   z-index: 999;
 `;
 
