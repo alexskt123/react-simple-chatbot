@@ -20,6 +20,7 @@ import Recognition from './recognition';
 import { ChatIcon, CloseIcon, SubmitIcon, MicIcon } from './icons';
 import { isMobile } from './utils';
 import { speakFn } from './speechSynthesis';
+import CurrentDate from './components/CurrentDate';
 
 class ChatBot extends Component {
   /* istanbul ignore next */
@@ -672,6 +673,7 @@ class ChatBot extends Component {
           height={height}
         >
           {!hideHeader && header}
+          <CurrentDate/>
           <Content
             className="rsc-content"
             ref={this.setContentRef}
