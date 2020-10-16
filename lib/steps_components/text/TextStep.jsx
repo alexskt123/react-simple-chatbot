@@ -92,7 +92,8 @@ class TextStep extends Component {
             isLast={isLast}
           >
             {loading ? <Loading /> : this.renderMessage()}
-            {loading ? '' : <TimeStamp />}
+            <div style={{ width: '20px', height: '10px', display: 'inline-block' }} />
+            {loading ? '' : <TimeStamp user={user} />}
           </Bubble>
         </TextStepContainer>
       </Fragment>
@@ -124,7 +125,7 @@ TextStep.propTypes = {
 TextStep.defaultProps = {
   previousStep: {},
   previousValue: '',
-  speak: () => { },
+  speak: () => {},
   steps: {}
 };
 
