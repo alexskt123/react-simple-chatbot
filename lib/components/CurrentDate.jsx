@@ -7,8 +7,10 @@ const CurrentDate = () => {
 
   return (
     <Fragment>
-      <div style={{ width: '100%', marginTop: '3px' }}>
-        <span style={{ justifyContent: 'center', display: 'flex', fontSize: 'x-small', color }}>{nowDate}</span>
+      <div style={{ width: '100%', marginTop: '3px', justifyContent: 'center', display: 'flex', marginBottom: '10px' }}>
+        <span style={{ fontSize: 'x-small', color }}>
+          {nowDate}
+        </span>
       </div>
     </Fragment>
   );

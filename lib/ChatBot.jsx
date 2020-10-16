@@ -673,7 +673,6 @@ class ChatBot extends Component {
           height={height}
         >
           {!hideHeader && header}
-          <CurrentDate/>
           <Content
             className="rsc-content"
             ref={this.setContentRef}
@@ -682,6 +681,7 @@ class ChatBot extends Component {
             height={height}
             hideInput={currentStep.hideInput}
           >
+            <CurrentDate/>
             {renderedSteps.map(this.renderStep)}
           </Content>
           <Footer className="rsc-footer" style={footerStyle}>
