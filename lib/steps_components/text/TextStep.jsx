@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Bubble from './Bubble';
 import Image from './Image';
 import ImageContainer from './ImageContainer';
 import Loading from '../common/Loading';
 import TextStepContainer from './TextStepContainer';
+import TimeStamp from '../common/TimeStamp';
 
 class TextStep extends Component {
   /* istanbul ignore next */
@@ -65,33 +66,36 @@ class TextStep extends Component {
 
     const showAvatar = user ? !hideUserAvatar : !hideBotAvatar;
 
-    const imageAltText = user ? "Your avatar" : `${botName}'s avatar`;
+    const imageAltText = user ? 'Your avatar' : `${botName}'s avatar`;
 
     return (
-      <TextStepContainer className={`rsc-ts ${user ? 'rsc-ts-user' : 'rsc-ts-bot'}`} user={user}>
-        <ImageContainer className="rsc-ts-image-container" user={user}>
-          {isFirst && showAvatar && (
-            <Image
-              className="rsc-ts-image"
-              style={avatarStyle}
-              showAvatar={showAvatar}
-              user={user}
-              src={avatar}
-              alt={imageAltText}
-            />
-          )}
-        </ImageContainer>
-        <Bubble
-          className="rsc-ts-bubble"
-          style={bubbleStyle}
-          user={user}
-          showAvatar={showAvatar}
-          isFirst={isFirst}
-          isLast={isLast}
-        >
-          {loading ? <Loading /> : this.renderMessage()}
-        </Bubble>
-      </TextStepContainer>
+      <Fragment>
+        <TextStepContainer className={`rsc-ts ${user ? 'rsc-ts-user' : 'rsc-ts-bot'}`} user={user}>
+          <ImageContainer className="rsc-ts-image-container" user={user}>
+            {isFirst && showAvatar && (
+              <Image
+                className="rsc-ts-image"
+                style={avatarStyle}
+                showAvatar={showAvatar}
+                user={user}
+                src={avatar}
+                alt={imageAltText}
+              />
+            )}
+          </ImageContainer>
+          <Bubble
+            className="rsc-ts-bubble"
+            style={bubbleStyle}
+            user={user}
+            showAvatar={showAvatar}
+            isFirst={isFirst}
+            isLast={isLast}
+          >
+            {loading ? <Loading /> : this.renderMessage()}
+            {loading ? '' : <TimeStamp />}
+          </Bubble>
+        </TextStepContainer>
+      </Fragment>
     );
   }
 }
@@ -120,7 +124,7 @@ TextStep.propTypes = {
 TextStep.defaultProps = {
   previousStep: {},
   previousValue: '',
-  speak: () => {},
+  speak: () => { },
   steps: {}
 };
 
