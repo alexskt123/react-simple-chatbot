@@ -6,6 +6,7 @@ const Footer = styled.div`
   border: 10px solid;
   border-color: ${({ theme }) => theme.headerBgColor};
   border-radius: 8px 8px 8px 8px;
+  bottom: -7px;
 `;
 
 Footer.defaultProps = {

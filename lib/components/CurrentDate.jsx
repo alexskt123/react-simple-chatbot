@@ -3,6 +3,14 @@ import React, { Fragment, useMemo } from 'react';
 const CurrentDate = () => {
   const nowDate = useMemo(() => new Date().toLocaleDateString(), []);
 
+  const divConfig = {
+    width: '100%',
+    marginTop: '3px',
+    justifyContent: 'center',
+    display: 'flex',
+    marginBottom: '10px'
+  };
+
   const currentDateConfig = {
     fontSize: 'x-small',
     backgroundColor: 'grey',
@@ -16,11 +24,7 @@ const CurrentDate = () => {
     <Fragment>
       <div
         style={{
-          width: '100%',
-          marginTop: '3px',
-          justifyContent: 'center',
-          display: 'flex',
-          marginBottom: '10px'
+          ...divConfig
         }}
       >
         <span style={{ ...currentDateConfig }}>{nowDate}</span>
