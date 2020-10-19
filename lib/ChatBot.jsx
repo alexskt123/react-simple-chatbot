@@ -624,12 +624,19 @@ class ChatBot extends Component {
 
     const header = headerComponent || (
       <Header className="rsc-header">
-        <HeaderTitle className="rsc-header-title">{headerTitle}</HeaderTitle>
-        {floating && (
-          <HeaderIcon className="rsc-header-close-button" onClick={() => this.toggleChatBot(false)}>
-            <CloseIcon />
-          </HeaderIcon>
-        )}
+        <HeaderTitle className="rsc-header-title">
+          {headerTitle}
+          {floating && (
+            <div style={{ textAlign: 'right', flex: '0 0 85%', alignSelf: 'center' }}>
+              <HeaderIcon
+                className="rsc-header-close-button"
+                onClick={() => this.toggleChatBot(false)}
+              >
+                <CloseIcon />
+              </HeaderIcon>
+            </div>
+          )}
+        </HeaderTitle>
       </Header>
     );
 
@@ -681,7 +688,7 @@ class ChatBot extends Component {
             height={height}
             hideInput={currentStep.hideInput}
           >
-            <CurrentDate/>
+            <CurrentDate />
             {renderedSteps.map(this.renderStep)}
           </Content>
           <Footer className="rsc-footer" style={footerStyle}>
