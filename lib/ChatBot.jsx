@@ -27,6 +27,8 @@ class ChatBot extends Component {
   constructor(props) {
     super(props);
 
+    this.store = { state: {} }
+
     this.content = null;
     this.input = null;
 
@@ -56,6 +58,10 @@ class ChatBot extends Component {
     };
 
     this.speak = speakFn(props.speechSynthesis);
+  }
+
+  componentDidUpdate() {
+    this.store = this.props.store
   }
 
   componentDidMount() {
@@ -690,7 +696,11 @@ class ChatBot extends Component {
           >
             <CurrentDate />
             {renderedSteps.map(this.renderStep)}
+            <h1>
+              {this.store.state.lang}
+            </h1>
           </Content>
+
           <Footer className="rsc-footer" style={footerStyle}>
             {!currentStep.hideInput && (
               <Input
